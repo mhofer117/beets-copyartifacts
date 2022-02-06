@@ -157,7 +157,7 @@ class CopyArtifactsPlugin(BeetsPlugin):
                 ignored_files.append(source_file)
                 continue
 
-            dest_file = beets.util.unique_path(dest_file)
+            dest_file = beets.util.unique_path(dest_file.encode('utf-8'))
             beets.util.mkdirall(dest_file)
             dest_file = beets.util.bytestring_path(dest_file)
 
